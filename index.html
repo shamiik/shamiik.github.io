@@ -3,47 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>My Animated Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="spotlight"></div>
+
   <header>
-    <h1>Shamik Deepto</h1>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#profile">Profile</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Welcome to My Portfolio</h2>
-    <p>Engineer | Researcher | Problem Solver</p>
-  </section>
+  <main>
+    <section id="home">
+      <h1>👋 Hello, I'm Your Name</h1>
+      <p>Creative Developer & Designer</p>
+    </section>
 
-  <section id="about">
-    <h3>About Me</h3>
-    <p>I am an engineer and researcher passionate about building smart solutions and exploring future technology trends. I enjoy solving critical problems using code and forward-thinking strategies.</p>
-  </section>
+    <section id="projects">
+      <h2>🛠 Projects</h2>
+      <div class="grid">
+        <div class="card">Project 1</div>
+        <div class="card">Project 2</div>
+        <div class="card">Project 3</div>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h3>Projects</h3>
-    <ul>
-      <li>Thingsboard Widget Customization</li>
-      <li>OEE Dashboard with Charting</li>
-      <li>AI Eye Disease Classifier with Gradio</li>
-    </ul>
-  </section>
+    <section id="publications">
+      <h2>📰 Publications</h2>
+      <ul>
+        <li><a href="#">Publication A</a></li>
+        <li><a href="#">Publication B</a></li>
+        <li><a href="#">Publication C</a></li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:shamikdey8@gmail.com">shamikdey8@gmail.com</a></p>
-  </section>
+    <section id="resume">
+      <h2>📄 Resume</h2>
+      <a href="#" class="button">Download Resume</a>
+    </section>
+
+    <section id="profile">
+      <h2>🧑‍💼 Profile</h2>
+      <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img" />
+      <p>A short personal introduction goes here.</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Shamik Deepto. All rights reserved.</p>
+    <p>© 2025 Your Name. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

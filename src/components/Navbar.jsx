@@ -127,12 +127,16 @@ const Navbar = () => {
                 <>
                     {/* Backdrop */}
                     <div 
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden animate-fade-in"
+                        className="fixed inset-0 bg-black/60 z-40 md:hidden animate-fade-in"
                         onClick={() => setMenuOpen(false)}
+                        style={{ WebkitTapHighlightColor: 'transparent' }}
                     ></div>
                     
                     {/* Drawer */}
-                    <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-dark z-50 md:hidden animate-slide-in-right shadow-2xl">
+                    <div 
+                        className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-dark z-50 md:hidden animate-slide-in-right shadow-2xl"
+                        style={{ transform: 'translate3d(0, 0, 0)' }}
+                    >
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
                             <div className="flex items-center gap-2">

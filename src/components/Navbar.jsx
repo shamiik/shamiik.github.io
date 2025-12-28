@@ -8,18 +8,11 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // 1. Optimized scroll listener (Passive for iOS performance)
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                if (!scrolled) setScrolled(true);
-            } else {
-                if (scrolled) setScrolled(false);
-            }
-        };
+        const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [scrolled]);
+    }, []);
 
     useEffect(() => {
         if (isDark) {
@@ -31,30 +24,33 @@ const Navbar = () => {
 
     const toggleTheme = () => setIsDark(!isDark);
 
-    // 2. Faster Navigation Handler (Remove preventDefault/stopProp conflicts)
-    const handleNavClick = (path) => {
-        setMenuOpen(false);
-
+    // FIXED NAVIGATION HANDLER
+    const handleNavClick = (e, path) => {
+        // 1. If it's a hash link (Experience, Projects, Contact)
         if (path.startsWith('#')) {
+            e.preventDefault();
             const sectionId = path.substring(1);
+            
             if (location.pathname === '/') {
                 const element = document.getElementById(sectionId);
                 if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    setMenuOpen(false); // Close menu
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }, 300); // Wait for drawer to move out of the way
                 }
             } else {
+                setMenuOpen(false);
                 navigate('/');
-                // iOS needs a slightly longer delay for the DOM to be ready
                 setTimeout(() => {
                     const element = document.getElementById(sectionId);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }, 300); 
+                    if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
             }
         } else {
-            navigate(path);
-            window.scrollTo(0, 0);
+            // 2. For regular routes (Home, About, Research)
+            // Let the <Link> component handle the navigation, just close the menu
+            setMenuOpen(false);
         }
     };
 
@@ -68,82 +64,73 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 top-4 transition-all duration-300 pointer-events-none" id="navbar">
-            <div className="container mx-auto px-4 md:px-6 pointer-events-auto">
-                {/* The Glass Container */}
-                <div className="glass-water rounded-2xl px-6 py-3 flex justify-between items-center max-w-6xl mx-auto shadow-xl border border-white/10">
+        <nav className="fixed w-full z-50 top-4">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="glass-water rounded-2xl px-6 py-3 flex justify-between items-center max-w-6xl mx-auto shadow-lg border border-white/10">
                     
-                    {/* Logo */}
-                    <Link to="/" className="text-xl font-heading font-bold tracking-tighter flex items-center gap-2 select-none" onClick={() => {setMenuOpen(false); window.scrollTo(0,0)}}>
-                        <i className="fas fa-code text-primary text-xl"></i>
+                    <Link to="/" className="text-xl font-bold flex items-center gap-2" onClick={() => {setMenuOpen(false); window.scrollTo(0,0)}}>
+                        <i className="fas fa-code text-primary"></i>
                         <span className="text-gray-800 dark:text-gray-100">Shamik <span className="text-primary">Deepto</span></span>
                     </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-2">
-                        <ul className="flex items-center gap-1 font-medium text-sm">
-                            {navLinks.map((link, index) => (
-                                <li key={index}>
-                                    <button
-                                        onClick={() => handleNavClick(link.path)}
-                                        className="nav-pill text-gray-600 dark:text-gray-300 cursor-pointer block px-4 py-2 hover:bg-primary/10 transition-colors rounded-full"
-                                    >
-                                        {link.name}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-4"></div>
-                        <button onClick={toggleTheme} className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-white/10 text-gray-600 dark:text-gray-300 transition-all">
+                        {navLinks.map((link, index) => (
+                            <Link 
+                                key={index} 
+                                to={link.path} 
+                                onClick={(e) => handleNavClick(e, link.path)}
+                                className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                        <button onClick={toggleTheme} className="ml-4 p-2 text-gray-600 dark:text-gray-300">
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
                         </button>
                     </div>
 
-                    {/* Mobile Menu Button - Optimized for iOS */}
+                    {/* Mobile Menu Trigger */}
                     <div className="md:hidden flex items-center gap-3">
-                        <button 
-                            onClick={toggleTheme}
-                            className="w-10 h-10 flex items-center justify-center rounded-full active:bg-gray-200 dark:active:bg-white/10 text-gray-600 dark:text-gray-300 touch-manipulation"
-                        >
+                        <button onClick={toggleTheme} className="p-2 text-gray-600 dark:text-gray-300">
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
                         </button>
-                        <button 
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            className="w-10 h-10 flex items-center justify-center text-xl text-gray-700 dark:text-gray-200 active:scale-90 transition-transform touch-manipulation"
-                        >
-                            <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                        <button onClick={() => setMenuOpen(true)} className="p-2 text-gray-700 dark:text-gray-200">
+                            <i className="fas fa-bars text-xl"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu Drawer */}
-            <div 
-                className={`fixed inset-0 bg-black/60 z-[60] md:hidden transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-                onClick={() => setMenuOpen(false)}
-                style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
-            />
+            {/* Backdrop: Only closes when clicking OUTSIDE the drawer */}
+            {menuOpen && (
+                <div 
+                    className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm transition-opacity"
+                    onClick={() => setMenuOpen(false)}
+                />
+            )}
             
+            {/* Mobile Drawer */}
             <div 
-                className={`fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-slate-900 z-[70] md:hidden shadow-2xl transition-transform duration-300 ease-out will-change-transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-slate-900 z-[70] shadow-2xl transition-transform duration-300 ease-in-out transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                // IMPORTANT: Stop propagation so clicks inside don't trigger the backdrop's onClick
+                onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800">
-                    <div className="flex items-center gap-2">
-                        <i className="fas fa-code text-primary text-xl"></i>
-                        <span className="text-lg font-bold dark:text-white">Menu</span>
-                    </div>
-                    <button onClick={() => setMenuOpen(false)} className="p-2 active:scale-90 transition-transform"><i className="fas fa-times text-xl dark:text-gray-400"></i></button>
+                    <span className="font-bold dark:text-white">Menu</span>
+                    <button onClick={() => setMenuOpen(false)} className="p-2"><i className="fas fa-times text-xl dark:text-white"></i></button>
                 </div>
                 
                 <nav className="flex flex-col p-4">
                     {navLinks.map((link, index) => (
-                        <button
+                        <Link
                             key={index}
-                            onClick={() => handleNavClick(link.path)}
-                            className="w-full text-left px-6 py-4 rounded-xl text-gray-700 dark:text-gray-300 font-medium active:bg-primary/10 active:text-primary transition-all select-none touch-manipulation"
+                            to={link.path}
+                            onClick={(e) => handleNavClick(e, link.path)}
+                            className="w-full text-left px-6 py-4 rounded-xl text-gray-700 dark:text-gray-300 font-medium active:bg-gray-100 dark:active:bg-gray-800"
                         >
                             {link.name}
-                        </button>
+                        </Link>
                     ))}
                 </nav>
             </div>

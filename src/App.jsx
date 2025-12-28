@@ -35,7 +35,6 @@ function AppContent() {
     // ==========================================
     // SECURITY (Disable Right Click & DevTools)
     // ==========================================
-    /*
     const handleContextMenu = (e) => e.preventDefault();
     const handleKeyDown = (e) => {
       if (e.key === 'F12') e.preventDefault();
@@ -48,7 +47,6 @@ function AppContent() {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('keydown', handleKeyDown);
     };
-    */
   }, []);
 
   // Re-run scroll reveal on route change (hacky but effective for this scale)

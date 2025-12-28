@@ -108,13 +108,23 @@ const Navbar = () => {
                     <div className="md:hidden flex items-center gap-3">
                         <button 
                             onClick={toggleTheme}
+                            onTouchEnd={(e) => {
+                                e.preventDefault();
+                                toggleTheme();
+                            }}
                             className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-600 dark:text-gray-300"
+                            style={{ touchAction: 'manipulation' }}
                         >
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'}`}></i>
                         </button>
                         <button 
                             onClick={() => setMenuOpen(!menuOpen)}
+                            onTouchEnd={(e) => {
+                                e.preventDefault();
+                                setMenuOpen(!menuOpen);
+                            }}
                             className="text-xl text-gray-700 dark:text-gray-200 focus:outline-none"
+                            style={{ touchAction: 'manipulation' }}
                         >
                             <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                         </button>
@@ -130,7 +140,14 @@ const Navbar = () => {
                         menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                     }`}
                     onClick={() => setMenuOpen(false)}
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                    onTouchEnd={(e) => {
+                        e.preventDefault();
+                        setMenuOpen(false);
+                    }}
+                    style={{ 
+                        WebkitTapHighlightColor: 'transparent',
+                        touchAction: 'manipulation'
+                    }}
                 ></div>
                 
                 {/* Drawer */}
@@ -138,7 +155,7 @@ const Navbar = () => {
                     className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-dark z-50 md:hidden shadow-2xl transition-transform duration-250 ease-out ${
                         menuOpen ? 'translate-x-0' : 'translate-x-full'
                     }`}
-                    style={{ willChange: 'transform' }}
+                    style={{ willChange: 'transform', touchAction: 'manipulation' }}
                 >
                     {/* Header */}
                     <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
@@ -150,7 +167,12 @@ const Navbar = () => {
                         </div>
                         <button 
                             onClick={() => setMenuOpen(false)}
+                            onTouchEnd={(e) => {
+                                e.preventDefault();
+                                setMenuOpen(false);
+                            }}
                             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
+                            style={{ touchAction: 'manipulation' }}
                         >
                             <i className="fas fa-times text-xl"></i>
                         </button>
@@ -163,7 +185,12 @@ const Navbar = () => {
                                 key={index}
                                 href={link.path}
                                 onClick={(e) => handleNavClick(e, link.path)}
+                                onTouchEnd={(e) => {
+                                    e.preventDefault();
+                                    handleNavClick(e, link.path);
+                                }}
                                 className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:text-primary transition-all font-medium flex items-center gap-3 group"
+                                style={{ touchAction: 'manipulation' }}
                             >
                                 <span className="w-1 h-6 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                                 {link.name}
@@ -175,7 +202,12 @@ const Navbar = () => {
                     <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200 dark:border-gray-800">
                         <button 
                             onClick={toggleTheme}
+                            onTouchEnd={(e) => {
+                                e.preventDefault();
+                                toggleTheme();
+                            }}
                             className="w-full px-4 py-3 rounded-xl glass-water flex items-center justify-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all font-medium"
+                            style={{ touchAction: 'manipulation' }}
                         >
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-lg`}></i>
                             {isDark ? 'Light Mode' : 'Dark Mode'}

@@ -249,6 +249,23 @@ html:not(.dark) .glass-water {
   overflow: hidden;
 }
 
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Remove iOS tap delay */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove tap delay for all interactive elements */
+a, button, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .dark .social-glass {
   color: #cbd5e1;
 }

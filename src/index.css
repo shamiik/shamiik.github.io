@@ -449,3 +449,21 @@ html:not(.dark) .wave-fill { fill: rgba(99, 102, 241, 0.2); }
 .dark #neural-canvas {
     opacity: 0.5;
 }
+
+
+/* Add to your index.css */
+@layer base {
+  button, a {
+    /* Removes the gray box flash on tap which causes UI lag on iOS */
+    -webkit-tap-highlight-color: transparent;
+    /* Tells iOS to ignore double-tap zoom for faster clicks */
+    touch-action: manipulation;
+  }
+
+  /* Force GPU rendering for the drawer to avoid main-thread lag */
+  .will-change-transform {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}

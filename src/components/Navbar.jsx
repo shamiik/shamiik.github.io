@@ -139,11 +139,8 @@ const Navbar = () => {
                     className={`fixed inset-0 bg-black/60 z-40 md:hidden transition-opacity duration-200 ${
                         menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                     }`}
+                    onTouchStart={() => setMenuOpen(false)}
                     onClick={() => setMenuOpen(false)}
-                    onTouchEnd={(e) => {
-                        e.preventDefault();
-                        setMenuOpen(false);
-                    }}
                     style={{ 
                         WebkitTapHighlightColor: 'transparent',
                         touchAction: 'manipulation'
@@ -166,12 +163,9 @@ const Navbar = () => {
                             </span>
                         </div>
                         <button 
+                            onTouchStart={() => setMenuOpen(false)}
                             onClick={() => setMenuOpen(false)}
-                            onTouchEnd={(e) => {
-                                e.preventDefault();
-                                setMenuOpen(false);
-                            }}
-                            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
+                            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300 active:scale-95"
                             style={{ touchAction: 'manipulation' }}
                         >
                             <i className="fas fa-times text-xl"></i>
@@ -184,12 +178,12 @@ const Navbar = () => {
                             <a
                                 key={index}
                                 href={link.path}
-                                onClick={(e) => handleNavClick(e, link.path)}
-                                onTouchEnd={(e) => {
-                                    e.preventDefault();
-                                    handleNavClick(e, link.path);
+                                onTouchStart={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'rgba(99, 102, 241, 0.1)';
+                                    setTimeout(() => handleNavClick(e, link.path), 50);
                                 }}
-                                className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:text-primary transition-all font-medium flex items-center gap-3 group"
+                                onClick={(e) => handleNavClick(e, link.path)}
+                                className="px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:text-primary transition-all font-medium flex items-center gap-3 group active:scale-98"
                                 style={{ touchAction: 'manipulation' }}
                             >
                                 <span className="w-1 h-6 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -201,12 +195,9 @@ const Navbar = () => {
                     {/* Footer with Theme Toggle */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200 dark:border-gray-800">
                         <button 
+                            onTouchStart={() => toggleTheme()}
                             onClick={toggleTheme}
-                            onTouchEnd={(e) => {
-                                e.preventDefault();
-                                toggleTheme();
-                            }}
-                            className="w-full px-4 py-3 rounded-xl glass-water flex items-center justify-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all font-medium"
+                            className="w-full px-4 py-3 rounded-xl glass-water flex items-center justify-center gap-3 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all font-medium active:scale-98"
                             style={{ touchAction: 'manipulation' }}
                         >
                             <i className={`fas ${isDark ? 'fa-sun' : 'fa-moon'} text-lg`}></i>

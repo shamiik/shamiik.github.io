@@ -18,7 +18,7 @@ const AboutIntro = () => {
 
         <div className="space-y-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
           <p>
-            I’m an energetic and geeky learner with an endless desire to explore new things and push beyond my limits. I love transforming complex ideas into practical, meaningful outcomes through continuous learning and hands-on building.
+            Shamik Dey Deepto — I’m an energetic and geeky learner with an endless desire to explore new things and push beyond my limits. I love transforming complex ideas into practical, meaningful outcomes through continuous learning and hands-on building.
           </p>
           <p>
             I’m passionate about software engineering, with a strong focus on AI/ML and cyber & network security. I enjoy writing clean, scalable code, solving challenging problems, and developing intelligent systems that are fast, reliable, and security-aware.

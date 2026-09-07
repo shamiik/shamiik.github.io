@@ -96,6 +96,7 @@ class SiteFooter extends HTMLElement {
 </footer>`;
   }
 }
+
 customElements.define('site-footer', SiteFooter);
 
 // 3. Mobile Menu Toggle & Navigation Handler

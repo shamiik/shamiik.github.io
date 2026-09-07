@@ -53,8 +53,6 @@ class SiteFooter extends HTMLElement {
           <li class="text-secondary">Research Assistant &amp; Software Engineer</li>
           <li class="text-secondary">Ahsanullah University of Science and Technology</li>
           <li><a href="https://scholar.google.com/citations?user=A8TmS5oAAAAJ&hl" target="_blank" rel="noopener">Google Scholar</a></li>
-          <li><a href="https://linkedin.com/in/shamik-dey-001099196" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://orcid.org/0009-0009-3319-1927" target="_blank" rel="noopener">ORCID</a></li>
         </ul>
       </div>
 
@@ -64,16 +62,16 @@ class SiteFooter extends HTMLElement {
             <span class="footer-icon"><i class="fas fa-envelope"></i></span>
             <a href="mailto:shamikdey7@gmail.com">shamikdey7@gmail.com</a>
           </li>
-          <li class="text-secondary">
-            <span class="footer-icon"><i class="fas fa-phone"></i></span>
-            <a href="tel:+8801771328292">+88 01771-328292</a>
+          <li>
+            <span class="footer-icon"><i class="fab fa-linkedin-in"></i></span>
+            <a href="https://linkedin.com/in/shamikdey" target="_blank" rel="noopener">LinkedIn</a>
           </li>
           <li>
             <span class="footer-icon"><i class="fab fa-github"></i></span>
             <a href="https://github.com/shamiik" target="_blank" rel="noopener">shamiik</a>
           </li>
           <li>
-            <span class="footer-icon"><i class="fab fa-twitter"></i></span>
+            <span class="footer-icon"><i class="fa-brands fa-x-twitter"></i></span>
             <a href="https://x.com/shamikdeepto" target="_blank" rel="noopener">@shamikdeepto</a>
           </li>
         </ul>
@@ -131,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 4. BibTeX Citation Toggle
-window.toggleBibtex = function(id) {
+window.toggleBibtex = function (id) {
   const el = document.getElementById(id);
   if (el) {
     el.classList.toggle('open');
@@ -139,7 +137,7 @@ window.toggleBibtex = function(id) {
 };
 
 // 5. Copy BibTeX helper
-window.copyBibtex = function(codeId, btn) {
+window.copyBibtex = function (codeId, btn) {
   const codeEl = document.getElementById(codeId);
   if (!codeEl) return;
 

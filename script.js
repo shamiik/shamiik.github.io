@@ -104,20 +104,29 @@ function setupNavbarInteractions(scope = document) {
   const navMenu = scope.querySelector('#navbarNav');
 
   if (navToggle && navMenu) {
+    if (navToggle.dataset.hasNavbarListener === 'true') {
+      return;
+    }
+    navToggle.dataset.hasNavbarListener = 'true';
+
     navToggle.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
-      navMenu.classList.toggle('show');
+      const isOpen = navMenu.classList.toggle('show');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
     document.addEventListener('click', (e) => {
       if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
         navMenu.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }

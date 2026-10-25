@@ -10,7 +10,7 @@ class SiteNavbar extends HTMLElement {
     this.innerHTML = `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="/">Shamik Dey</a>
+    <a class="navbar-brand brand-stylish" href="/">Shamik</a>
     <button class="navbar-toggler" id="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

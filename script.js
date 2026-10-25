@@ -47,16 +47,16 @@ class SiteFooter extends HTMLElement {
 <footer class="site-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-6 mb-3 mb-md-0">
+      <div class="col-md-7 col-sm-12 mb-3 mb-md-0">
         <ul class="list-unstyled">
           <li class="text-secondary font-weight-bold">Shamik Dey</li>
-          <li class="text-secondary">Research Assistant &amp; Software Engineer</li>
-          <li class="text-secondary">Ahsanullah University of Science and Technology</li>
+          <li class="text-secondary">Research Assistant, Ahsanullah University of Science and Technology</li>
+          <li class="text-secondary">Software Engineer, Sincos Automation Technologies Ltd.</li>
           <li><a href="https://scholar.google.com/citations?user=A8TmS5oAAAAJ&hl" target="_blank" rel="noopener">Google Scholar</a></li>
         </ul>
       </div>
 
-      <div class="col-md-4 col-sm-6 mb-3 mb-md-0" id="contact-me">
+      <div class="col-md-4 col-sm-12 ml-md-auto" id="contact-me">
         <ul class="list-unstyled">
           <li class="text-secondary">
             <span class="footer-icon"><i class="fas fa-envelope"></i></span>
@@ -76,19 +76,9 @@ class SiteFooter extends HTMLElement {
           </li>
         </ul>
       </div>
-
-      <div class="col-md-4 col-sm-12">
-        <ul class="list-unstyled">
-          <li class="text-secondary">
-            <span class="footer-icon"><i class="fas fa-map-marker-alt"></i></span>
-            Mohanagar Project, Rampura<br />
-            Dhaka-1219, Bangladesh
-          </li>
-        </ul>
-      </div>
     </div>
 
-    <div class="footer-copy">
+    <div class="footer-copy text-right" style="text-align: right;">
       <i class="far fa-copyright"></i>
       Shamik Dey 2026
     </div>

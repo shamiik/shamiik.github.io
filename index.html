@@ -67,8 +67,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=2">
   <link rel="shortcut icon" type="image/x-icon" href="/assets/shamik.jpg">
 
   <title>Home | Shamik Dey</title>
@@ -84,15 +86,19 @@
     <div class="row flex-column-reverse flex-md-row align-items-start">
       <div class="col-12 col-md-8 col-lg-9">
         <h1 class="site-name">Shamik Dey</h1>
-        <p class="site-role"><strong>Research Assistant</strong>, Department of EEE, Ahsanullah University of Science and Technology</p>
-        <p class="site-role site-affiliation"><strong>Software Engineer</strong>, Sincos Automation Technologies Ltd.</p>
+        <p class="site-role"><strong>Research Assistant</strong>, Department of EEE, Ahsanullah University of Science
+          and Technology (<a href="https://sites.google.com/view/nexgen-rg" target="_blank" rel="noopener">NexGEn
+            Research Group</a>)</p>
+        <p class="site-role site-affiliation"><strong>Software Engineer</strong>, Sincos Automation Technologies Ltd.
+        </p>
 
         <ul class="interest-tags">
-          <li class="interest-tag">Computer vision</li>
-          <li class="interest-tag">Deep learning</li>
-          <li class="interest-tag">Biomedical image analysis</li>
-          <!-- <li class="interest-tag">Explainable AI</li>
-          <li class="interest-tag">Uncertainty estimation</li> -->
+          <li class="interest-tag">Computer Vision</li>
+          <li class="interest-tag">Deep Learning</li>
+          <li class="interest-tag">Medical Imaging</li>
+          <li class="interest-tag">Hardware Security</li>
+          <li class="interest-tag">Cybersecurity</li>
+          <li class="interest-tag">TinyML</li>
         </ul>
 
         <div class="home-actions">
@@ -117,47 +123,116 @@
     <hr class="section-rule">
 
     <div class="content-column">
-      <div class="page-prose">
-        <p>I'm a Research Assistant in Electrical &amp; Electronic Engineering at Ahsanullah University of
-          Science and Technology (AUST) and a Software Engineer at Sincos Automation Technologies Ltd., working
-          across <strong>computer vision</strong>, <strong>deep learning</strong>, and <strong>biomedical image
-            analysis</strong>. I'm currently preparing PhD applications, aiming to work at the intersection of
-          machine learning and healthcare imaging. My research centers on building CNN and dual-backbone
-          architectures for diagnosing complex conditions from medical imagery — brain MRI, ocular fundus
-          photography, and beyond — with an emphasis on explainability and reliability under uncertainty.</p>
+      <!-- Prospective PhD Applicant Callout Box -->
+      <div class="phd-callout-box">
+        <div class="phd-callout-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="phd-callout-content">
+          <div class="phd-callout-title">Prospective PhD Applicant</div>
+          <p class="phd-callout-text">
+            I am actively seeking doctoral research opportunities and am open to pursuing PhD research in any of my key
+            interest areas: <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, <strong>Medical
+              Imaging</strong>, <strong>Hardware Security</strong>, <strong>Cybersecurity</strong>, and
+            <strong>TinyML</strong>.
+          </p>
+        </div>
+      </div>
 
-        <h3 id="research-focus">Research Focus</h3>
-        <ul>
-          <li><strong>Explainable biomedical computer vision</strong>: dual-backbone, attention-fused architectures
-            for differentiating tumor types from brain MRI (glioma vs. meningioma), and self-attention hybrid
-            networks for multi-class ocular disease classification — both designed around
-            clinician-interpretable outputs, not just raw accuracy.</li>
-          <li><strong>Uncertainty-aware diagnostic AI</strong>: incorporating uncertainty estimation into
-            classification pipelines so models communicate confidence, not just predictions, for high-stakes
-            healthcare use.</li>
-          <li><strong>Resource-efficient deep learning</strong>: lightweight, self-attention-based architectures
-            built with edge deployment and mobile clinical screening in mind.</li>
-          <li><strong>Applied ML beyond healthcare</strong>: time-series forecasting for industrial voltage
-            anomaly detection, graph-based intrusion detection for IIoT networks, and forecasting/prediction
-            work spanning solar irradiance and EV energy consumption — reflecting a broader interest in applying
-            rigorous ML methodology across domains.</li>
+      <div class="page-prose">
+        <p>I am a Research Assistant in the Department of Electrical and Electronic Engineering at Ahsanullah
+          University of Science and Technology (AUST), Bangladesh, where I contribute to research through the <a
+            href="https://sites.google.com/view/nexgen-rg" target="_blank" rel="noopener"><strong>NexGEn Research
+              Group</strong></a>. I also work as a Software Engineer (ML) at Sincos Automation Technologies Ltd., a
+          Bangladesh-based IoT automation company.</p>
+
+        <p>With an academic background in electrical and electronic engineering and professional experience in machine
+          learning, I work at the intersection of AI research and practical engineering applications. My research
+          experience includes medical image analysis, deep learning, IoT security, time-series forecasting, and
+          intelligent
+          systems for agriculture and industrial automation.</p>
+
+        <p>My research interests span <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, <strong>Medical
+            Imaging</strong>, <strong>Hardware Security</strong>, <strong>Cybersecurity</strong>, and
+          <strong>TinyML</strong>. I am open to pursuing doctoral research in any of these areas and am particularly
+          interested in opportunities that allow me to investigate challenging research problems, develop innovative
+          methods, and contribute to impactful scientific advancements.
+        </p>
+
+        <div class="section-subtitle-row"
+          style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; margin-bottom: 0.85rem; padding-bottom: 0.35rem; border-bottom: 1px solid #eef2f6;">
+          <h3 id="previous-research" style="margin: 0; padding: 0; border-bottom: none; display: inline-block;">Previous
+            Research and Contributions</h3>
+          <a href="/publications.html" class="section-more-link"
+            style="font-size: 0.9rem; font-weight: 600; color: #0f3d6e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;">
+            <i class="fa-solid fa-arrow-right" style="font-size: 0.82rem;"></i> View Publications
+          </a>
+        </div>
+        <ul class="research-point-list">
+          <li>
+            <strong>Explainable Biomedical Computer Vision:</strong> Worked on deep learning approaches for clinical
+            image analysis, including attention-guided and dual-backbone architectures. Contributions explore brain MRI
+            differentiation (glioma vs. meningioma), multi-class ocular disease classification, and real-time bone
+            fracture detection — focusing on improved feature representation, clinician interpretability, and
+            uncertainty
+            estimation.
+            <div class="paper-tags-row">
+              <span class="paper-tag">ResShuffle-ECAFusion (Brain MRI)</span>
+              <span class="paper-tag">EyeDiseaseNet (Ocular Disease)</span>
+              <span class="paper-tag">Modified VGG19 (Bone Fracture)</span>
+            </div>
+          </li>
+
+          <li>
+            <strong>Edge-IoT Security and Malware Detection:</strong> Investigated graph-based multi-view
+            representations
+            for robust network intrusion detection in industrial IoT networks using the ACM NSysS &rsquo;25 dataset,
+            alongside optimized machine learning and deep learning pipelines for malware classification in connected and
+            resource-constrained systems.
+            <div class="paper-tags-row">
+              <span class="paper-tag">Multi-View Graph IDS (ACM NSysS &rsquo;25)</span>
+              <span class="paper-tag">Malware Classification (IEEE CSNT &rsquo;25)</span>
+            </div>
+          </li>
+
+          <li>
+            <strong>Applied Machine Learning and Time-Series Forecasting:</strong> Explored compact gradient boosting
+            ensembles and predictive modeling across cyber-physical domains — including solar irradiance forecasting,
+            electric vehicle (EV) energy consumption prediction, and urban traffic flow prediction in Dhaka.
+            <div class="paper-tags-row">
+              <span class="paper-tag">Solar Irradiance Forecasting (IEEE ICCIT &rsquo;25)</span>
+              <span class="paper-tag">EV Energy Consumption (IEEE ECCE &rsquo;24)</span>
+              <span class="paper-tag">Dhaka Traffic Prediction (IEEE ECCE &rsquo;25)</span>
+            </div>
+          </li>
         </ul>
 
-        <h3 id="current-work">Current Work</h3>
-        <p>At AUST, I'm leading the design of a maturity-classification pipeline for Bangladeshi agricultural
-          crops — from data acquisition and annotation protocol to model development — structured for public
-          release to support reproducible agri-AI research. At Sincos, I split my time between deploying ML
-          pipelines for industrial monitoring and building the frontend of an OEE analytics platform.</p>
+        <h3 id="current-research">Current Research and Development</h3>
+        <ul>
+          <li><strong>AI-Driven Crop Maturity Detection (AIRG Grant, AUST):</strong> Leading the design of an AI-driven
+            crop maturity classification pipeline and a publicly accessible image dataset tailored to Bangladeshi
+            agricultural crops under the AUST Internal Research Grant (AIRG) (AIRG/2025/EEE/08/11), supporting
+            practical AI applications in data-driven farming.</li>
+          <li><strong>Industrial Anomaly Detection and Predictive Analytics (Sincos Automation):</strong> Developing
+            machine learning pipelines for industrial anomaly detection and contributing to Overall Equipment
+            Effectiveness
+            (OEE) analytics, applying data-driven methods to industrial monitoring and intelligent automation.</li>
+        </ul>
 
-        <h3 id="my-vision">My Vision</h3>
-        <p>This space is where I share my research activities in deep learning, biomedical imaging, and computer
-          vision — findings, project developments, and technical discussions as this work moves toward
-          publication.</p>
+        <h3 id="research-vision">Research Vision</h3>
+        <p>My long-term goal is to contribute to the advancement of intelligent, reliable, and efficient technologies
+          through research in artificial intelligence, machine learning, and embedded systems.</p>
+        <p>I am motivated by the opportunity to investigate challenging research questions, develop rigorous
+          methodologies,
+          and translate scientific findings into meaningful real-world applications. Through doctoral study, I hope to
+          strengthen my research capabilities, collaborate with the international research community, and contribute to
+          impactful scientific work across my areas of interest.</p>
 
-        <p>Explore my peer-reviewed work on the <a href="/publications.html">publications</a> page. If you're
-          interested in collaboration or prospective doctoral opportunities, please
-          <a href="/contact.html">get in touch</a>.
-        </p>
+        <h3 id="publications-collaboration">Publications &amp; Collaboration</h3>
+        <p>Explore my peer-reviewed and under-review papers on the <a
+            href="/publications.html"><strong>Publications</strong></a> page. I warmly welcome academic discussions,
+          research collaborations, and prospective PhD opportunities — please feel free to <a
+            href="/contact.html"><strong>connect</strong></a>.</p>
       </div>
 
       <div class="section-block">

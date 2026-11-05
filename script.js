@@ -156,3 +156,14 @@ window.copyBibtex = function (codeId, btn) {
     console.error('Failed to copy text: ', err);
   });
 };
+
+
+// 6. Invisible Analytics (GoatCounter)
+(function () {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
+  const gcScript = document.createElement('script');
+  gcScript.async = true;
+  gcScript.src = '//gc.zgo.at/count.js';
+  gcScript.dataset.goatcounter = 'https://shamik.goatcounter.com/count';
+  document.head.appendChild(gcScript);
+})();

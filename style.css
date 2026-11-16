@@ -399,3 +399,10 @@ site-footer .site-footer {
   }
 }
 
+/* Publication Title Styling */
+.pub-title {
+  font-weight: 600;
+  color: var(--navy-heading, #0a1e38);
+}
+
+

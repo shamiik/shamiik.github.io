@@ -405,4 +405,67 @@ site-footer .site-footer {
   color: var(--navy-heading, #0a1e38);
 }
 
+/* Professional Certifications Styling */
+.cert-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.cert-header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy-primary, #0f3d6e);
+  background: var(--navy-surface, #edf5fc);
+  border: 1px solid var(--navy-border, #d0e2f2);
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  text-decoration: none !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.cert-header-link:hover {
+  background: var(--navy-primary, #0f3d6e);
+  color: #fff !important;
+  border-color: var(--navy-primary, #0f3d6e);
+  box-shadow: 0 2px 6px rgba(15, 61, 110, 0.2);
+}
+
+.cert-header-link .fa-linkedin {
+  color: #0a66c2;
+  font-size: 0.95rem;
+}
+
+.cert-header-link:hover .fa-linkedin {
+  color: #fff;
+}
+
+.cert-more-box {
+  padding-left: 1.25rem;
+}
+
+.cert-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-primary, #0f3d6e);
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.cert-more-link:hover {
+  color: var(--navy-hover, #143a53);
+  text-decoration: underline;
+}
+
+
 

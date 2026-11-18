@@ -156,78 +156,91 @@
           collaborate with researchers working on related problems.
         </p>
 
-        <div class="section-subtitle-row"
-          style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; margin-bottom: 0.85rem; padding-bottom: 0.35rem; border-bottom: 1px solid #eef2f6;">
-          <h3 id="previous-research" style="margin: 0; padding: 0; border-bottom: none; display: inline-block;">Previous
-            Research and Contributions</h3>
-          <a href="/publications.html" class="section-more-link"
-            style="font-size: 0.9rem; font-weight: 600; color: #0f3d6e; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;">
-            <i class="fa-solid fa-arrow-right" style="font-size: 0.82rem;"></i> View Publications
+        <div class="section-subtitle-row">
+          <h3 id="previous-research"><i class="fa-solid fa-flask" style="color: var(--navy-primary); font-size: 1.1rem;"></i> Previous Research and Contributions</h3>
+          <a href="/publications.html" class="section-more-link">
+            <span>View Publications</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.78rem;"></i>
           </a>
         </div>
-        <ul class="research-point-list">
-          <li>
-            <strong>Explainable Biomedical Computer Vision:</strong> Worked on deep learning approaches for clinical
-            image analysis, including attention-guided and dual-backbone architectures. Contributions explore brain MRI
-            differentiation (glioma vs. meningioma), multi-class ocular disease classification, and real-time bone
-            fracture detection — focusing on improved feature representation, clinician interpretability, and
-            uncertainty
-            estimation.
-            <div class="paper-tags-row">
-              <span class="paper-tag">ResShuffle-ECAFusion (Brain MRI)</span>
-              <span class="paper-tag">EyeDiseaseNet (Ocular Disease)</span>
-              <span class="paper-tag">Modified VGG19 (Bone Fracture)</span>
+
+        <div class="research-cards-grid">
+          <div class="research-card">
+            <div class="research-card-header">
+              <h4 class="research-card-title">Explainable Biomedical Computer Vision</h4>
             </div>
-          </li>
-
-          <li>
-            <strong>Edge-IoT Security and Malware Detection:</strong> Investigated graph-based multi-view
-            representations
-            for robust network intrusion detection in industrial IoT networks using the ACM NSysS &rsquo;25 dataset,
-            alongside optimized machine learning and deep learning pipelines for malware classification in connected and
-            resource-constrained systems.
+            <p class="research-card-desc">Worked on deep learning approaches for clinical image analysis, including attention-guided and dual-backbone architectures. Contributions explore brain MRI differentiation (glioma vs. meningioma), multi-class ocular disease classification, and real-time bone fracture detection — focusing on improved feature representation, clinician interpretability, and uncertainty estimation.</p>
             <div class="paper-tags-row">
-              <span class="paper-tag">Multi-View Graph IDS (ACM NSysS &rsquo;25)</span>
-              <span class="paper-tag">Malware Classification (IEEE CSNT &rsquo;25)</span>
+              <span class="paper-tag"><i class="fa-solid fa-brain"></i> ResShuffle-ECAFusion (Brain MRI)</span>
+              <span class="paper-tag"><i class="fa-solid fa-eye"></i> EyeDiseaseNet (Ocular Disease)</span>
+              <span class="paper-tag"><i class="fa-solid fa-bone"></i> Modified VGG19 (Bone Fracture)</span>
             </div>
-          </li>
+          </div>
 
-          <li>
-            <strong>Applied Machine Learning and Time-Series Forecasting:</strong> Explored compact gradient boosting
-            ensembles and predictive modeling across cyber-physical domains — including solar irradiance forecasting,
-            electric vehicle (EV) energy consumption prediction, and urban traffic flow prediction in Dhaka.
+          <div class="research-card">
+            <div class="research-card-header">
+              <h4 class="research-card-title">Edge-IoT Security and Malware Detection</h4>
+            </div>
+            <p class="research-card-desc">Investigated graph-based multi-view representations for robust network intrusion detection in industrial IoT networks using the ACM NSysS &rsquo;25 dataset, alongside optimized machine learning and deep learning pipelines for malware classification in connected and resource-constrained systems.</p>
             <div class="paper-tags-row">
-              <span class="paper-tag">Solar Irradiance Forecasting (IEEE ICCIT &rsquo;25)</span>
-              <span class="paper-tag">EV Energy Consumption (IEEE ECCE &rsquo;24)</span>
-              <span class="paper-tag">Dhaka Traffic Prediction (IEEE ECCE &rsquo;25)</span>
+              <span class="paper-tag"><i class="fa-solid fa-shield-halved"></i> Multi-View Graph IDS (ACM NSysS &rsquo;25)</span>
+              <span class="paper-tag"><i class="fa-solid fa-bug"></i> Malware Classification (IEEE CSNT &rsquo;25)</span>
             </div>
-          </li>
-        </ul>
+          </div>
 
-        <h3 id="current-research">Current Research and Development</h3>
-        <ul>
-          <li><strong>AI-Driven Crop Maturity Detection (AIRG Grant, AUST):</strong> Leading the development of an
-            AI-driven crop maturity classification pipeline and a locally relevant crop image dataset under the AUST
-            Internal Research Grant (AIRG) (Project ID: AIRG/2025/EEE/08/11). The project focuses on developing computer
-            vision-based approaches for crop maturity assessment tailored to Bangladeshi agricultural conditions, with
-            the goal of supporting practical AI applications in agriculture.</li>
-          <li><strong>Industrial Development (Sincos Automation Technologies Ltd.):</strong> Developing
-            machine learning pipelines for industrial anomaly detection and contributing to Overall Equipment
-            Effectiveness
-            (OEE) analytics, applying data-driven methods to industrial monitoring and intelligent automation.</li>
-        </ul>
+          <div class="research-card">
+            <div class="research-card-header">
+              <h4 class="research-card-title">Applied Machine Learning and Time-Series Forecasting</h4>
+            </div>
+            <p class="research-card-desc">Explored compact gradient boosting ensembles and predictive modeling across cyber-physical domains — including solar irradiance forecasting, electric vehicle (EV) energy consumption prediction, and urban traffic flow prediction in Dhaka.</p>
+            <div class="paper-tags-row">
+              <span class="paper-tag"><i class="fa-solid fa-sun"></i> Solar Irradiance Forecasting (IEEE ICCIT &rsquo;25)</span>
+              <span class="paper-tag"><i class="fa-solid fa-bolt"></i> EV Energy Consumption (IEEE ECCE &rsquo;24)</span>
+              <span class="paper-tag"><i class="fa-solid fa-car"></i> Dhaka Traffic Prediction (IEEE ECCE &rsquo;25)</span>
+            </div>
+          </div>
+        </div>
 
-        <h3 id="research-vision">Research Vision</h3>
-        <p>My long-term goal is to contribute to the advancement of intelligent, reliable, and efficient technologies
-          through rigorous research in artificial intelligence and related engineering disciplines. I aim to develop
-          strong research expertise, collaborate with interdisciplinary teams, and contribute to meaningful scientific
-          progress through doctoral study.</p>
+        <h3 id="current-research"><i class="fa-solid fa-seedling" style="color: var(--navy-primary); font-size: 1.1rem;"></i> Current Research and Development</h3>
+        <div class="current-projects-grid">
+          <div class="current-project-card">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-2" style="gap: 0.5rem;">
+              <h4 class="research-card-title mb-0">AI-Driven Crop Maturity Detection</h4>
+              <span class="project-badge-grant"><i class="fa-solid fa-award"></i> AIRG Grant &bull; AUST</span>
+            </div>
+            <p class="research-card-desc mb-0">Leading the development of an AI-driven crop maturity classification pipeline and a locally relevant crop image dataset under the AUST Internal Research Grant (AIRG) (Project ID: AIRG/2025/EEE/08/11). The project focuses on developing computer vision-based approaches for crop maturity assessment tailored to Bangladeshi agricultural conditions, with the goal of supporting practical AI applications in agriculture.</p>
+          </div>
 
-        <h3 id="publications-collaboration">Publications &amp; Collaboration</h3>
-        <p>Explore my peer-reviewed and under-review papers on the <a
-            href="/publications.html"><strong>Publications</strong></a> page. I warmly welcome academic discussions,
-          research collaborations, and prospective PhD opportunities. If my background and research interests align with
-          your work, please feel free to <a href="/contact.html"><strong>connect</strong></a>.</p>
+          <div class="current-project-card">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-2" style="gap: 0.5rem;">
+              <h4 class="research-card-title mb-0">Industrial Development &amp; Predictive Analytics</h4>
+              <span class="project-badge-industry"><i class="fa-solid fa-industry"></i> Industry &bull; Sincos</span>
+            </div>
+            <p class="research-card-desc mb-0">Developing machine learning pipelines for industrial anomaly detection and contributing to Overall Equipment Effectiveness (OEE) analytics at Sincos Automation Technologies Ltd., applying data-driven methods to industrial monitoring and intelligent automation.</p>
+          </div>
+        </div>
+
+        <h3 id="research-vision"><i class="fa-solid fa-compass" style="color: var(--navy-primary); font-size: 1.1rem;"></i> Research Vision</h3>
+        <div class="vision-card">
+          <div class="vision-icon">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <div class="vision-content">
+            <p class="vision-text">My long-term goal is to contribute to the advancement of intelligent, reliable, and efficient technologies through rigorous research in artificial intelligence and related engineering disciplines. I aim to develop strong research expertise, collaborate with interdisciplinary teams, and contribute to meaningful scientific progress through doctoral study.</p>
+          </div>
+        </div>
+
+        <h3 id="publications-collaboration"><i class="fa-solid fa-handshake" style="color: var(--navy-primary); font-size: 1.1rem;"></i> Publications &amp; Collaboration</h3>
+        <div class="collab-card">
+          <p>Explore my peer-reviewed and under-review papers on the <a href="/publications.html"><strong>Publications</strong></a> page. I warmly welcome academic discussions, research collaborations, and prospective PhD opportunities. If my background and research interests align with your work, please feel free to <a href="/contact.html"><strong>connect</strong></a>.</p>
+          <div class="collab-actions">
+            <a href="/publications.html" class="btn btn-primary btn-sm" style="padding: 0.35rem 0.9rem; font-weight: 500;">
+              <i class="fa-solid fa-book-open mr-1"></i> View All Publications
+            </a>
+            <a href="/contact.html" class="btn btn-outline-primary btn-sm" style="padding: 0.35rem 0.9rem; font-weight: 500;">
+              <i class="fa-solid fa-envelope mr-1"></i> Get in Touch
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="section-block">
